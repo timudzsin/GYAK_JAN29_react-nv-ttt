@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import JatekTer from "./components/JatekTer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	//const jatekAllapotTomb = ["X", "X", "X", "O", "O", "O", "", "", ""];
+	const [jatekAllapotTomb, setJatekAllapotTomb] = useState([
+		"x",
+		"x",
+		"x",
+		"o",
+		"o",
+		"o",
+		"",
+		"",
+		"",
+	]);
+
+	function elemAppKattintas(index) {
+		console.log("App.js-ből kiírva", index);
+
+		const temp = [...jatekAllapotTomb];
+		temp[index] = "f";
+		setJatekAllapotTomb([...temp]);
+	}
+
+	return (
+		<div className="App">
+			<JatekTer
+				jatekAllapotTomb={jatekAllapotTomb}
+				elemAppKattintas={elemAppKattintas}
+			/>
+		</div>
+	);
 }
 
 export default App;

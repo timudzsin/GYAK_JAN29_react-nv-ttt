@@ -2,7 +2,9 @@ import "./Elem.css";
 
 function Elem(props) {
 	function elemKatintas() {
-		props.elemAppKattintas(props.index);
+		if (props.jel === "") {
+			props.elemAppKattintas(props.index);
+		}
 	}
 
 	return (

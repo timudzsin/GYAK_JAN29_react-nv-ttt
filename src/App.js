@@ -3,25 +3,27 @@ import "./App.css";
 import JatekTer from "./components/JatekTer";
 
 function App() {
-	//const jatekAllapotTomb = ["X", "X", "X", "O", "O", "O", "", "", ""];
 	const [jatekAllapotTomb, setJatekAllapotTomb] = useState([
-		"x",
-		"x",
-		"x",
-		"o",
-		"o",
-		"o",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
 		"",
 		"",
 		"",
 	]);
+	const [lepes, setLepes] = useState(1);
 
 	function elemAppKattintas(index) {
-		console.log("App.js-ből kiírva", index);
-
 		const temp = [...jatekAllapotTomb];
-		temp[index] = "f";
+		temp[index] = lepes % 2 === 0 ? "o" : "x";
 		setJatekAllapotTomb([...temp]);
+
+		let temp2 = lepes;
+		temp2++;
+		setLepes(temp2);
 	}
 
 	return (

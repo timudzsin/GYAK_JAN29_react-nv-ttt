@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap");
 
 .elem {
-	border: 10px dashed white;
+	border: 10px solid white;
 	color: white;
 	font-family: "Jacquard 12", system-ui;
     user-select: none;
